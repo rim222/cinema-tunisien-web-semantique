@@ -1,0 +1,231 @@
+@prefix ctn:  <http://example.org/cinematn#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+# ---------- Genres ----------
+ctn:Drame a ctn:Genre ; rdfs:label "Drame"@fr .
+ctn:Comedie a ctn:Genre ; rdfs:label "Comédie"@fr .
+ctn:Fantastique a ctn:Genre ; rdfs:label "Fantastique"@fr .
+
+# ---------- Festivals (éditions) ----------
+ctn:cannes1983_ucr a ctn:Festival ; rdfs:label "Festival de Cannes" ; ctn:edition 1983 ; ctn:section "Un Certain Regard" .
+ctn:venise2015_orizzonti a ctn:Festival ; rdfs:label "Mostra de Venise" ; ctn:edition 2015 ; ctn:section "Orizzonti" .
+ctn:berlin2016_competition a ctn:Festival ; rdfs:label "Berlinale" ; ctn:edition 2016 ; ctn:section "Compétition" .
+ctn:cannes2017_ucr a ctn:Festival ; rdfs:label "Festival de Cannes" ; ctn:edition 2017 ; ctn:section "Un Certain Regard" .
+ctn:cannes2018_quinzaine a ctn:Festival ; rdfs:label "Festival de Cannes" ; ctn:edition 2018 ; ctn:section "Quinzaine des réalisateurs" .
+ctn:venise2019_orizzonti a ctn:Festival ; rdfs:label "Mostra de Venise" ; ctn:edition 2019 ; ctn:section "Orizzonti" .
+ctn:venise2020_orizzonti a ctn:Festival ; rdfs:label "Mostra de Venise" ; ctn:edition 2020 ; ctn:section "Orizzonti" .
+
+# ---------- Cinéastes (types déduits par inférence : domain/range) ----------
+ctn:naceur_ktari ctn:nomCineaste "Naceur Ktari" .
+ctn:ridha_behi ctn:nomCineaste "Ridha Béhi" .
+ctn:abdellatif_ben_ammar ctn:nomCineaste "Abdellatif Ben Ammar" .
+ctn:ferid_boughedir ctn:nomCineaste "Férid Boughedir" .
+ctn:nouri_bouzid ctn:nomCineaste "Nouri Bouzid" .
+ctn:fadhel_jaibi ctn:nomCineaste "Fadhel Jaïbi" .
+ctn:fadhel_jaziri ctn:nomCineaste "Fadhel Jaziri" .
+ctn:nejia_ben_mabrouk ctn:nomCineaste "Néjia Ben Mabrouk" .
+ctn:nacer_khemir ctn:nomCineaste "Nacer Khemir" .
+ctn:moufida_tlatli ctn:nomCineaste "Moufida Tlatli" .
+ctn:mohamed_zran ctn:nomCineaste "Mohamed Zran" .
+ctn:kalthoum_bornaz ctn:nomCineaste "Kalthoum Bornaz" .
+ctn:raja_amari ctn:nomCineaste "Raja Amari" .
+ctn:nadia_el_fani ctn:nomCineaste "Nadia El Fani" .
+ctn:nejib_belkadhi ctn:nomCineaste "Nejib Belkadhi" .
+ctn:leyla_bouzid ctn:nomCineaste "Leyla Bouzid" .
+ctn:mohamed_ben_attia ctn:nomCineaste "Mohamed Ben Attia" .
+ctn:mehdi_barsaoui ctn:nomCineaste "Mehdi Barsaoui" .
+ctn:kaouther_ben_hania ctn:nomCineaste "Kaouther Ben Hania" .
+
+# ---------- Films ----------
+ctn:les_ambassadeurs
+    a ctn:Film ;
+    ctn:titre "Les Ambassadeurs" ;
+    ctn:anneeSortie 1975 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:naceur_ktari .
+ctn:soleil_des_hyenes
+    a ctn:Film ;
+    ctn:titre "Soleil des hyènes" ;
+    ctn:anneeSortie 1976 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:ridha_behi .
+ctn:aziza
+    a ctn:Film ;
+    ctn:titre "Aziza" ;
+    ctn:anneeSortie 1980 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:abdellatif_ben_ammar .
+ctn:camera_dafrique
+    a ctn:Documentaire ;
+    ctn:titre "Caméra d'Afrique" ;
+    ctn:anneeSortie 1983 ;
+    ctn:estRealisePar ctn:ferid_boughedir ;
+    ctn:selectionneAu ctn:cannes1983_ucr .
+ctn:rih_essed
+    a ctn:Film ;
+    ctn:titre "Rih Essed (L'Homme de cendres)" ;
+    ctn:anneeSortie 1986 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nouri_bouzid .
+ctn:arab
+    a ctn:Film ;
+    ctn:titre "Arab" ;
+    ctn:anneeSortie 1988 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:fadhel_jaibi ;
+    ctn:estRealisePar ctn:fadhel_jaziri .
+ctn:sama
+    a ctn:Film ;
+    ctn:titre "Sama" ;
+    ctn:anneeSortie 1988 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nejia_ben_mabrouk .
+ctn:safaih_min_dhahab
+    a ctn:Film ;
+    ctn:titre "Safaïh min dhahab (Les Sabots en or)" ;
+    ctn:anneeSortie 1989 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nouri_bouzid .
+ctn:halfaouine
+    a ctn:Film ;
+    ctn:titre "Halfaouine, l'enfant des terrasses" ;
+    ctn:anneeSortie 1990 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:aPourGenre ctn:Comedie ;
+    ctn:estRealisePar ctn:ferid_boughedir .
+ctn:collier_perdu_colombe
+    a ctn:Film ;
+    ctn:titre "Le Collier perdu de la colombe" ;
+    ctn:anneeSortie 1991 ;
+    ctn:aPourGenre ctn:Fantastique ;
+    ctn:estRealisePar ctn:nacer_khemir .
+ctn:bezness
+    a ctn:Film ;
+    ctn:titre "Bezness" ;
+    ctn:anneeSortie 1992 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nouri_bouzid .
+ctn:silences_du_palais
+    a ctn:Film ;
+    ctn:titre "Les Silences du palais" ;
+    ctn:anneeSortie 1994 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:moufida_tlatli .
+ctn:essaida
+    a ctn:Film ;
+    ctn:titre "Essaïda" ;
+    ctn:anneeSortie 1996 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:mohamed_zran .
+ctn:ete_a_la_goulette
+    a ctn:Film ;
+    ctn:titre "Un été à La Goulette" ;
+    ctn:anneeSortie 1996 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:aPourGenre ctn:Comedie ;
+    ctn:estRealisePar ctn:ferid_boughedir .
+ctn:keswa
+    a ctn:Film ;
+    ctn:titre "Keswa, le fil perdu" ;
+    ctn:anneeSortie 1997 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:kalthoum_bornaz .
+ctn:bent_familia
+    a ctn:Film ;
+    ctn:titre "Bent Familia" ;
+    ctn:anneeSortie 1997 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nouri_bouzid .
+ctn:saison_des_hommes
+    a ctn:Film ;
+    ctn:titre "La Saison des hommes" ;
+    ctn:anneeSortie 2000 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:moufida_tlatli .
+ctn:satin_rouge
+    a ctn:Film ;
+    ctn:titre "Satin rouge" ;
+    ctn:anneeSortie 2002 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:raja_amari .
+ctn:bedwin_hacker
+    a ctn:Film ;
+    ctn:titre "Bedwin Hacker" ;
+    ctn:anneeSortie 2003 ;
+    ctn:aPourGenre ctn:Comedie ;
+    ctn:estRealisePar ctn:nadia_el_fani .
+ctn:bab_aziz
+    a ctn:Film ;
+    ctn:titre "Bab'Aziz" ;
+    ctn:anneeSortie 2005 ;
+    ctn:aPourGenre ctn:Fantastique ;
+    ctn:estRealisePar ctn:nacer_khemir .
+ctn:making_of
+    a ctn:Film ;
+    ctn:titre "Making Of" ;
+    ctn:anneeSortie 2006 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nouri_bouzid .
+ctn:vhs_kahloucha
+    a ctn:Documentaire ;
+    ctn:titre "VHS Kahloucha" ;
+    ctn:anneeSortie 2006 ;
+    ctn:estRealisePar ctn:nejib_belkadhi .
+ctn:dowaha
+    a ctn:Film ;
+    ctn:titre "Dowaha (Secret Child)" ;
+    ctn:anneeSortie 2009 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:raja_amari .
+ctn:bastardo
+    a ctn:Film ;
+    ctn:titre "Bastardo" ;
+    ctn:anneeSortie 2013 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:nejib_belkadhi .
+ctn:as_i_open_my_eyes
+    a ctn:Film ;
+    ctn:titre "À peine j'ouvre les yeux" ;
+    ctn:anneeSortie 2015 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:leyla_bouzid ;
+    ctn:selectionneAu ctn:venise2015_orizzonti .
+ctn:hedi
+    a ctn:Film ;
+    ctn:titre "Hedi" ;
+    ctn:anneeSortie 2016 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:mohamed_ben_attia ;
+    ctn:selectionneAu ctn:berlin2016_competition .
+ctn:belle_et_la_meute
+    a ctn:Film ;
+    ctn:titre "La Belle et la Meute" ;
+    ctn:anneeSortie 2017 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:kaouther_ben_hania ;
+    ctn:selectionneAu ctn:cannes2017_ucr .
+ctn:mon_cher_enfant
+    a ctn:Film ;
+    ctn:titre "Mon cher enfant" ;
+    ctn:anneeSortie 2018 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:mohamed_ben_attia ;
+    ctn:selectionneAu ctn:cannes2018_quinzaine .
+ctn:un_fils
+    a ctn:Film ;
+    ctn:titre "Un fils" ;
+    ctn:anneeSortie 2019 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:mehdi_barsaoui ;
+    ctn:selectionneAu ctn:venise2019_orizzonti .
+ctn:homme_qui_a_vendu_sa_peau
+    a ctn:Film ;
+    ctn:titre "L'Homme qui a vendu sa peau" ;
+    ctn:anneeSortie 2020 ;
+    ctn:aPourGenre ctn:Drame ;
+    ctn:estRealisePar ctn:kaouther_ben_hania ;
+    ctn:selectionneAu ctn:venise2020_orizzonti .

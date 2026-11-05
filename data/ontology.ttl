@@ -1,0 +1,27 @@
+@prefix ctn:  <http://example.org/cinematn#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# ---------- Classes (6 + foaf:Person réutilisée) ----------
+foaf:Person a rdfs:Class .
+ctn:Film          a rdfs:Class ; rdfs:label "Film"@fr .
+ctn:Documentaire  a rdfs:Class ; rdfs:subClassOf ctn:Film ; rdfs:label "Documentaire"@fr .
+ctn:Cineaste      a rdfs:Class ; rdfs:subClassOf foaf:Person ; rdfs:label "Cinéaste"@fr .
+ctn:Realisateur   a rdfs:Class ; rdfs:subClassOf ctn:Cineaste ; rdfs:label "Réalisateur"@fr .
+ctn:Genre         a rdfs:Class ; rdfs:label "Genre"@fr .
+ctn:Festival      a rdfs:Class ; rdfs:label "Festival (édition et section)"@fr .
+
+# ---------- Propriétés (9 + foaf:name réutilisée) ----------
+ctn:titre         a rdf:Property ; rdfs:domain ctn:Film ; rdfs:range xsd:string .
+ctn:anneeSortie   a rdf:Property ; rdfs:domain ctn:Film ; rdfs:range xsd:integer .
+ctn:aPourGenre    a rdf:Property ; rdfs:domain ctn:Film ; rdfs:range ctn:Genre .
+ctn:aPourCineaste a rdf:Property ; rdfs:domain ctn:Film ; rdfs:range ctn:Cineaste .
+ctn:estRealisePar a rdf:Property ; rdfs:subPropertyOf ctn:aPourCineaste ;
+                  rdfs:domain ctn:Film ; rdfs:range ctn:Realisateur .
+ctn:selectionneAu a rdf:Property ; rdfs:domain ctn:Film ; rdfs:range ctn:Festival .
+ctn:edition       a rdf:Property ; rdfs:domain ctn:Festival ; rdfs:range xsd:integer .
+ctn:section       a rdf:Property ; rdfs:domain ctn:Festival ; rdfs:range xsd:string .
+ctn:nomCineaste   a rdf:Property ; rdfs:subPropertyOf foaf:name ;
+                  rdfs:domain ctn:Cineaste ; rdfs:range xsd:string .

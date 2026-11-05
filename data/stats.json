@@ -1,0 +1,11 @@
+{
+  "films": 30,
+  "documentaires": 2,
+  "films_typed_Film": 28,
+  "realisateurs": 19,
+  "liens_realisation": 31,
+  "festivals": 7,
+  "selections": 7,
+  "annee_min": 1975,
+  "annee_max": 2020
+}

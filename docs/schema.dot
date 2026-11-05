@@ -1,0 +1,22 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; nodesep=0.7; ranksep=0.9; pad=0.3;
+  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", fillcolor="#FDF1E3", color="#B5541C", penwidth=1.6];
+  edge [fontname="Helvetica", fontsize=11, color="#444444"];
+
+  Film [label=<<B>ctn:Film</B><BR ALIGN="LEFT"/><FONT POINT-SIZE="11">titre : string<BR ALIGN="LEFT"/>anneeSortie : integer<BR ALIGN="LEFT"/></FONT>>];
+  Doc  [label=<<B>ctn:Documentaire</B>>];
+  Genre [label=<<B>ctn:Genre</B>>];
+  Festival [label=<<B>ctn:Festival</B><BR ALIGN="LEFT"/><FONT POINT-SIZE="11">edition : integer<BR ALIGN="LEFT"/>section : string<BR ALIGN="LEFT"/></FONT>>];
+  Cine [label=<<B>ctn:Cineaste</B><BR ALIGN="LEFT"/><FONT POINT-SIZE="11">nomCineaste : string<BR ALIGN="LEFT"/>(sous-propriété de foaf:name)<BR ALIGN="LEFT"/></FONT>>];
+  Real [label=<<B>ctn:Realisateur</B>>];
+  Person [label=<<B>foaf:Person</B><BR/><FONT POINT-SIZE="10">(vocabulaire FOAF réutilisé)</FONT>>, fillcolor="#E3F0F7", color="#1B6E99", style="rounded,filled,dashed"];
+
+  Doc -> Film [label="rdfs:subClassOf", arrowhead=empty, color="#B5541C", fontcolor="#B5541C"];
+  Real -> Cine [label="rdfs:subClassOf", arrowhead=empty, color="#B5541C", fontcolor="#B5541C"];
+  Cine -> Person [label="rdfs:subClassOf", arrowhead=empty, color="#1B6E99", fontcolor="#1B6E99"];
+
+  Film -> Genre [label="aPourGenre"];
+  Film -> Festival [label="selectionneAu"];
+  Film -> Cine [label="aPourCineaste"];
+  Film -> Real [label="estRealisePar\n(rdfs:subPropertyOf aPourCineaste)", style=bold, color="#B5541C", fontcolor="#B5541C"];
+}
